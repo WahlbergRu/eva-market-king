@@ -1,0 +1,35 @@
+/* app css stylesheet */
+
+.vertical-container {
+  height: calc(100vh - 24px);
+  width: 100%;
+}
+.vertical-container .repeated-item {
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+  height: 40px;
+  padding-top: 10px; }
+.vertical-container .md-content {
+  margin: 16px; }
+.vertical-container .md-virtual-repeat-container {
+  border: solid 1px grey; }
+.vertical-container .md-virtual-repeat-container .md-virtual-repeat-offsetter div {
+  padding-left: 16px; }
+
+md-list md-list-item:nth-child(2n){
+  background-color: #eee;
+}
+.toTop{
+  position: absolute;
+  top: 0px;
+  background: white;
+  height: 24px;
+  z-index: 10;
+}
+
+.pt24{
+  padding-top: 24px;
+}
+
+.wide{
+  width: 100%;}

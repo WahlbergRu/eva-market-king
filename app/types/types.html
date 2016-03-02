@@ -1,0 +1,27 @@
+<table class="toTop">
+    <thead>
+    <tr
+        class="row">
+        <th class="col s1 right-align" data-field="id">Id</th>
+        <th class="col s11"  data-field="Name">Name</th>
+    </tr>
+    </thead>
+</table>
+<div class="pt24">
+    <md-virtual-repeat-container class="vertical-container">
+        <table class="striped">
+            <tbody>
+            <tr md-virtual-repeat="item in DynamicItems.items"
+                class="row"
+                md-item-size="20">
+                <td class="col s1 right-align"  ><a href="#/types/{{item.id}}">{{item.id}}</a></td>
+                <td class="col s11" ><a href="#/types/{{item.id}}">{{item.name}}</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </md-virtual-repeat-container>
+
+</div>
+<!--<pre>-->
+    <!--{{DynamicItems.items | json}}-->
+<!--</pre>-->

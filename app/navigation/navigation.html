@@ -1,0 +1,22 @@
+<div ng-controller="navigationCtrl">
+
+
+    <md-sidenav md-component-id="left" md-is-locked-open="true" class="md-sidenav-right">
+
+
+        <md-toolbar class="md-theme-indigo">
+            <h1 class="md-toolbar-tools">Меню</h1>
+        </md-toolbar>
+
+        <md-content flex>
+            <md-list>
+                <div class="md-3-line" ng-repeat="item in todos">
+                    <md-button class="md-primary" href="#{{item.link}}">{{item.title}}</md-button>
+                    <md-divider inset></md-divider>
+                </div>
+            </md-list>
+        </md-content>
+
+    </md-sidenav>
+
+</div>
