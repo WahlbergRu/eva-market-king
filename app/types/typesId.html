@@ -1,0 +1,68 @@
+
+<div class="vertical-container">
+    <md-content>
+
+        <div id="chart"></div>
+
+        <md-list>
+            <md-subheader class="md-no-sticky">Jita</md-subheader>
+        </md-list>
+
+        <md-list>
+            <md-list-item class="md-1-line" ng-repeat="(key, value) in MarketDataItem" ng-if="key!=='dogma'">
+                <div class="md-list-item-text wide" layout="row">
+                    <h6 flex="20" style="text-align: right">{{key}}</h6>
+                    <h6 flex="75" flex-offset="5">{{value}}</h6>
+                    <md-icon class="md-secondary-container" class="material-icons"  aria-label="message" >message</md-icon>
+                    <!--<md-divider flex="100" ></md-divider>-->
+                </div>
+            </md-list-item>
+        </md-list>
+
+        <md-list>
+            <md-subheader class="md-no-sticky">Parameters</md-subheader>
+            <md-list-item class="md-1-line" ng-repeat="(key, value) in DynamicItem" ng-if="key!=='dogma'">
+                <div class="md-list-item-text wide" layout="row">
+                    <h6 flex="20" style="text-align: right">{{key}}</h6>
+                    <h6 flex="75" flex-offset="5">{{value}}</h6>
+                    <!--<md-icon class="md-secondary-container" class="material-icons"  aria-label="message" >message</md-icon>-->
+                    <!--<md-divider flex="100" ></md-divider>-->
+                </div>
+            </md-list-item>
+        </md-list>
+
+        <md-list ng-repeat="(objKey, obj) in DynamicItem['dogma']">
+            <md-divider></md-divider>
+            <md-subheader class="md-no-sticky">{{objKey}}</md-subheader>
+            <md-list-item class="md-1-line" ng-repeat="(key, value) in obj">
+                <div class="md-list-item-text wide" layout="row">
+                    <h6 flex="20"
+                        style="text-align: right"
+                        ng-if="value.attribute">
+                        {{value.attribute.name}}
+                    </h6>
+                    <h6 flex="20"
+                        style="text-align: right"
+                        ng-if="value.effect">
+                        {{value.effect.name}}
+                    </h6>
+                    <h6 ng-if="value.value != null"
+                        flex-offset="5"
+                        flex="75">
+                        {{value.value}}
+                    </h6>
+                    <h6 ng-if="value.isDefault != null"
+                        flex-offset="5"
+                        flex="75">
+                        <i class="material-icons">
+                            {{(value.effects.isDefault)?'check':'close'}}
+                        </i>
+                    </h6>
+                </div>
+
+            </md-list-item>
+        </md-list>
+
+        <!--<img src="{{DynamicItem.graphicID.href}}" alt=""/>-->
+    </md-content>
+</div>
